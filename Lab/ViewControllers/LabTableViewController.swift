@@ -18,11 +18,11 @@ class LabTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        
+        // Get all the labs from Realm Database
         labs = Lab.all()
         
+        // Reload the tableview
         self.tableView.reloadData()
         
         // Add right and left bar button items to view controller
