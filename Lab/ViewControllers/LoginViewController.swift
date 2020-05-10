@@ -25,7 +25,19 @@ class LoginViewController: UIViewController {
         setUpUI()
         
         checkIfUserLoggedIn()
+        
         // Do any additional setup after loading the view.
+        // Add a tap gesture on entire view which would dismiss keyboard
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        
+        // add the tapGesture to the view
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    // Function to dismiss the keyboard
+    @objc func dismissKeyboard()
+    {
+        view.endEditing(true)
     }
     
     func setUpUI()
